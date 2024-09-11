@@ -51,6 +51,8 @@ resource "aws_instance" "blog" {
 module "alb" {
   source = "terraform-aws-modules/alb/aws"
 
+  load_balancer_type = "application"
+
   name    = "blog-alb"
   vpc_id  = module.blog_vpc.vpc_id
   subnets = module.blog_vpc.public_subnets
@@ -85,7 +87,6 @@ module "alb" {
     Environment = "dev"
   }
 }
-
 
 # Security Group
 module "blog_sg" {
