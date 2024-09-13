@@ -18,7 +18,7 @@ variable "and_filter" {
 
   default = {
     name = "bitnami"
-    owner = ["979382823631"]
+    owner = "979382823631"
   }
   
 }
