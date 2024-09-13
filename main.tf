@@ -34,7 +34,7 @@ data "aws_vpc" "default" {
     default = true
 }
 
-
+# ASG
 module "autoscaling" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "6.5.2"
