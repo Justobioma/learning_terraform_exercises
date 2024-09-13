@@ -50,6 +50,7 @@ resource "aws_instance" "blog" {
 # ALB
 module "alb" {
   source = "terraform-aws-modules/alb/aws"
+  version = "~> 6.0"
 
   load_balancer_type = "application"
 
@@ -62,8 +63,8 @@ module "alb" {
     {
       ex-instance = {
         name_prefix      = "blog"
-        backend_protocol         = "HTTP"
-        backend_port             = 80
+        backend_protocol = "HTTP"
+        backend_port     = 80
         target_type      = "instance"
         targets = {
           my_target = {
