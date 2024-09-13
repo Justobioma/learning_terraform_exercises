@@ -3,7 +3,7 @@ data "aws_ami" "app_ami" {
 
   filter {
     name   = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
-    values = [var.filter_ami.name]
+    values = [var.ami_filter.name]
   }
 
   filter {
@@ -11,7 +11,7 @@ data "aws_ami" "app_ami" {
     values = ["hvm"]
   }
 
-  owners = [var.filter_ami.owner] # Bitnami
+  owners = [var.ami_filter.owner] 
 }
 
 module "blog_vpc" {
